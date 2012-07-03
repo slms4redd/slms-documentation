@@ -1,17 +1,12 @@
-.. GeoStore Admin User Interface documentation master file, created by
-   sphinx-quickstart on Thu Jun 14 10:58:26 2012.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
-=============================================
-UNREDD GeoStore Administration User Interface
-=============================================
+=================================
+GeoStore Administration Interface
+=================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
-
 
 Introduction
 ^^^^^^^^^^^^
@@ -481,12 +476,4 @@ By clicking on the `[chart data]` link in the chart script list page you get a l
    :align: center
 
    Chart data overview
-
-
-Indices and tables
-^^^^^^^^^^^^^^^^^^
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
