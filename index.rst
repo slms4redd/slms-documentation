@@ -8,7 +8,7 @@ Contents:
    :maxdepth: 3
 
    introduction
-   geoserver
+   geoserver/index
    geobatch
    portal
    admin
