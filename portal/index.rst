@@ -1,23 +1,6 @@
-
-==================
-Portal User Manual
-==================
-
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-
-Introduction
-============
-
-.. figure:: _static/portal/whole_page.png
-   :align: center
-   :scale: 75 %
-
-   NFMS portal
-
+=====================
+Portal User Interface
+=====================
 
 The NFMS portal page is composed of the following main user interface elements:
 
@@ -34,9 +17,13 @@ The NFMS portal page is composed of the following main user interface elements:
 :ref:`Legend Pane <legend-pane>`
    Shows the legend for the visible layers, together with the link to their source
 
+.. figure:: img/whole_page.png
+   :align: center
+   :scale: 75 %
+
+   NFMS portal
 
 Follows a detailed description of the user interface elements and functions described above.
-
 
 .. _map:
 
@@ -53,7 +40,7 @@ Navigation Buttons
 
 Navigation buttons are used to zoom in and out and to the maximum extent (the whole country). Zoom levels are discontinuous, an match Google Maps™ ones to allow overlay with their layers if needed. When the map is zoomed on a small area and you want to quickly move to another one, you can zoom to the maximum extent and then zoom in again to the area you are interested in.
 
-.. figure:: _static/portal/nav_buttons.png
+.. figure:: img/nav_buttons.png
    :align: center
    :scale: 75 %
 
@@ -75,7 +62,7 @@ The layers pane shows all the map layers available in the portal, organized in a
 * Other
 
 
-.. figure:: _static/portal/layers_pane.png
+.. figure:: img/layers_pane.png
    :align: center
    :scale: 75 %
 
@@ -117,7 +104,7 @@ Inline Legends
 
  When the layer has one only category (in the case of country boundary layers for instance), an inline legend icon is shown at the left of its label in the :ref:`layers pane <layers-pane>`.
 
-.. figure:: _static/portal/layer_inline_legend.png
+.. figure:: img/layer_inline_legend.png
    :align: center
    :scale: 75 %
 
@@ -131,7 +118,7 @@ Inline Legend Buttons
 
 If the layer has a more complex legend, a "show legend" button is shown instead. When the layer is not active the icon is grayed-out and not active as a button. When the layer is added to the map, the inline legend button is activated and by clicking on it the `Legend Pane <legend-pane>` is shown and its content automatically scrolls to the legend requested.
 
-.. figure:: _static/portal/inline_legend_button.png
+.. figure:: img/inline_legend_button.png
    :align: center
    :scale: 75 %
 
@@ -150,7 +137,7 @@ If layer information is available, an info button is shown at the right of the l
 * Logos of the organizations providing the data
 * Any other relevant information
 
-.. figure:: _static/portal/layer_info.png
+.. figure:: img/layer_info.png
    :align: center
    :scale: 75 %
 
@@ -162,7 +149,7 @@ If layer information is available, an info button is shown at the right of the l
 Selected Layers Pane
 ====================
 
-.. figure:: _static/portal/selected_layers.png
+.. figure:: img/selected_layers.png
    :align: center
    :scale: 75 %
 
@@ -181,7 +168,7 @@ Some of the layers, in particular the ones that are periodically produced by, or
 
 If you select 2005 in the time slider,  the system will automatically choose Deforestation year 2005 (as it matches the value you selected) and Landsat mosaic year 2000 (the previous year closest to the one you have chosen).
 
-.. figure:: _static/portal/time_slider.png
+.. figure:: img/time_slider.png
    :align: center
    :scale: 75 %
 
@@ -198,7 +185,7 @@ Portal language is selected by clicking on the language buttons. Depending on th
 
 When you select a language the system remembers it the next times you reload the portal.
 
-.. figure:: _static/portal/language_buttons.png
+.. figure:: img/language_buttons.png
    :align: center
    :scale: 75 %
 
@@ -217,7 +204,7 @@ The legend is hidden by default. To show it you can either
 
 The pane  shows the legends for the layers that are being shown on the map. When clicking on an inline legend icon related to a layer, the pane automatically scrolls to its legend.
 
-.. figure:: _static/portal/legend_pane.png
+.. figure:: img/legend_pane.png
    :align: center
    :scale: 75 %
 
@@ -229,7 +216,7 @@ Page Footer
 
 The footer section of the portal contains popups/links to pages with relevant information related to the project in general and could contain links to information specific for the country.
 
-.. figure:: _static/portal/footer_links.png
+.. figure:: img/footer_links.png
    :align: center
    :scale: 75 %
 
@@ -262,7 +249,7 @@ Querying the map
 The Query Dialog
 ----------------
 
-.. figure:: _static/portal/query_dialog.png
+.. figure:: img/query_dialog.png
    :align: center
    :scale: 75 %
 
@@ -270,7 +257,7 @@ The Query Dialog
 
 If any `queryable` layer is visible on the map, you can get access to information and statistics related to them by clicking on the point you are interested to. A dialog is shown with an entry for each queryable layer that has features (if vector) or a no-data value (if raster) on that point. When hovering one of the entries in the dialog, the related polygon feature is highlighted on the map (see image below). You can also zoom to that area by clicking the ``Zoom to area`` button, and access statistics based on it.
 
-.. figure:: _static/portal/query_dialog_2.png
+.. figure:: img/query_dialog_2.png
    :align: center
    :scale: 75 %
 
@@ -283,7 +270,7 @@ Pre-calculated Statistics
 
 By clicking on ``the statistics`` button in the query dialog, a modal popup containing the statistics for the area is shown.
 
-.. figure:: _static/portal/chart.png
+.. figure:: img/chart.png
    :align: center
    :scale: 75 %
 
@@ -308,7 +295,7 @@ To access real-time statistics:
 
 .. _draw-polygon:
 
-.. figure:: _static/portal/draw_polygon.png
+.. figure:: img/draw_polygon.png
    :align: center
    :scale: 75 %
 
@@ -328,4 +315,5 @@ To send feedback about an area:
 * click on the Feedback button on the header and start drawing the contour of the area you want give feedback to
 * double click to close the polygon
 * a dialog will show you the list of the available layers for which feedback is enabled
-* after you choose the layer and click on the ``Calculate`` button, enter the feedback and the captcha text and click ``Ok``
+* after you choose the layer and click on the ``Calculate`` button, enter the feedback and the captcha text and click ``Ok``.
+

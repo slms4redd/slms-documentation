@@ -1,5 +1,4 @@
-.. GeoServer Advanced Training Modules
-
+=========
 GeoServer
 =========
 

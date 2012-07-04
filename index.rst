@@ -1,18 +1,18 @@
-=====================
-UN-REDD Documentation
-=====================
+===============================================
+UN-REDD NFMS Platform - Technical Documentation
+===============================================
 
 Contents:
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
-   introduction
+   introduction/index
    geoserver/index
-   geobatch
-   portal
-   admin
-   testdata
+   geobatch/index
+   portal/index
+   geostore/index
+   testdata/index
 
 .. * :ref:`search`
 

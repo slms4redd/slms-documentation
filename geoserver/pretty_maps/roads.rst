@@ -51,11 +51,11 @@ Roads and labelling roads
 
        Roads data is an obvious example - you only want a single label for all of ``main street``, not a label for every piece of ``main street``.
 	 
-       .. figure:: img/group_not.gif 
+       .. figure:: img/group_not.png 
 	   
        When the grouping option is off (default), grouping is not performed and each geometry is labeled (space permitting).
 
-       .. figure:: img/group_yes.gif 
+       .. figure:: img/group_yes.png 
 
        With the grouping option on, all the geometries with the same label are grouped together and the label position is determined from ALL the geometries.
 
