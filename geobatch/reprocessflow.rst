@@ -58,11 +58,11 @@ Editable part: this is the directory that GeoBatch monitors for new files::
                        <listenerId>ReprocessStatusActionLogger0</listenerId>
 
                        <failIgnored>false</failIgnored>
-                       <!--<configDir>reprocess/</configDir>-->
+                       <!--<overrideConfigDir>reprocess/</overrideConfigDir>-->
 
 Editable part: action config dir; refer to geobatch doc::
 
-                       <configDir>/var/geobatch/drc/config/reprocessFlow</configDir>
+                       <overrideConfigDir>/var/geobatch/drc/config/reprocessFlow</overrideConfigDir>
 
 Editable part: GeoStore config::
 
