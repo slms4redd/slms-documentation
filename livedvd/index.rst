@@ -12,4 +12,4 @@ In this module you will see:
 
    Running the LiveDVD <live_dvd_running>
    Installing the LiveDVD on the system <live_dvd_install>
-
+   Starting and stopping the applications <run_tomcat>
