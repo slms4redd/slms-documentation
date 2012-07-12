@@ -54,7 +54,7 @@ Next directory definition can be customized: it's the directory that GeoBatch mo
            <listenerId>IngestionStatusActionLogger0</listenerId>
            
            <failIgnored>false</failIgnored>
-           <!-- <configDir>/var/geobatch/config</configDir> -->
+           <!-- <overrideConfigDir>/var/geobatch/config</overrideConfigDir> -->
 
 Next directory definition can be customized: This is the dir where original files will be put into::
 
