@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'UNREDD'
-copyright = u'2012, Stefano Giaccio'
+project = u'UNREDD NFMS'
+copyright = u'2012, GeoSolutions'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

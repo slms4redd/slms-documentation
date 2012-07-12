@@ -7,8 +7,8 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   livedvd/index
    introduction/index
+   livedvd/index
    geoserver/index
    geobatch/index
    portal/index
