@@ -14,7 +14,7 @@ GeoServer is packaged as a standalone servlet for use with existing servlet cont
 Installation
 ^^^^^^^^^^^^
 
-#. Navigate to the `GeoServer Download page <http://geoserver.org/display/GEOS/Download>`_ and pick the Latest 2.2.x version to download.
+#. Navigate to the `GeoServer Download page <http://geoserver.org/display/GEOS/Download>`_ and pick the Latest stable version to download.
 
 #. Select :guilabel:`Web archive` on the download page.
 

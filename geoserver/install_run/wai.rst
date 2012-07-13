@@ -6,8 +6,7 @@
 Web Administrator Interface
 ---------------------------
 
-
-In this moudule we will get acquainted with the GeoServer 2.2.x Web Administrator Interface.
+In this moudule we will get acquainted with the GeoServer Web Administrator Interface.
 
 #. Navigate to the GeoServer `Welcome Page <http://localhost:8080/geoserver/>`_.
  

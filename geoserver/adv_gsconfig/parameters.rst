@@ -35,7 +35,7 @@ The following table shows each option name, a description, and the minimum GeoSe
      - Sets the maximum amount of rendering errors tolerated by a GetMap. Usually GetMap skips over faulty features, reprojection errors and the like in an attempt to serve the results anyways. This makes for a best effort rendering, but also makes it harder to spot issues, and consumes CPU cycles as each error is handled and logged
      - 1.7.5
      
-Out of the box GeoServer 2.2.x uses 65MB, 60 seconds and 1000 errors respectively. All limits can be disabled by setting their value to ``0``.
+Out of the box GeoServer uses 65MB, 60 seconds and 1000 errors respectively. All limits can be disabled by setting their value to ``0``.
 
 Once any of the set limits is exceeded, the GetMap operation will stop and a ``ServiceException`` will be returned to the client.
 
