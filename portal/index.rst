@@ -7,4 +7,5 @@ Portal User Interface
 
    interface
    config
+   exercice
 
