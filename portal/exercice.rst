@@ -1,4 +1,4 @@
-UNREDD Custom Portal Exercise
+UNREDD Custom Portal Exercice
 =============================
 
 Deploying the portal
