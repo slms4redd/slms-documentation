@@ -8,7 +8,8 @@ Flow diagram
 .. figure:: img/UN-REDD_GB_ingestion_flow.png
    :align: center
    :width: 1024
-
+   :scale: 100 %
+   
    Ingestion flow
 
 

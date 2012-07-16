@@ -11,8 +11,9 @@ Contents:
    livedvd/index
    geoserver/index
    geobatch/index
-   portal/index
+   geostore/index
    admin/index
+   portal/index
    testdata/index
 
 .. * :ref:`search`
