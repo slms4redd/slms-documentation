@@ -2,8 +2,18 @@
 Ingestion flow configuration
 ============================
 
-Ingestion flow
-==============
+Flow diagram
+============
+
+.. figure:: img/UN-REDD_GB_ingestion_flow.png
+   :align: center
+   :width: 1024
+
+   Ingestion flow
+
+
+Flow configuration file
+=======================
 
 Here's a sample flow definition for the data ingestion:
 ::
