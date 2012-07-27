@@ -1,6 +1,6 @@
-====================
-The portal interface
-====================
+=====================
+Interface description
+=====================
 
 The NFMS portal page is composed of the following main user interface elements:
 
@@ -212,7 +212,7 @@ The pane  shows the legends for the layers that are being shown on the map. When
 
 
 Page Footer
-============
+===========
 
 The footer section of the portal contains popups/links to pages with relevant information related to the project in general and could contain links to information specific for the country.
 
