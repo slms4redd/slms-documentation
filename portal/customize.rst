@@ -36,10 +36,17 @@ This will install and run the portal with the default (sample) configuration, ac
 
      http://localhost/portal/
 
-Setting up the ``$PORTAL_CONFIG_DIR`` system property
-=====================================================
+Setting the ``$PORTAL_CONFIG_DIR``
+==================================
 
-**TODO**
+To inform the application about the country specific data location,
+set a Java System Property called :file:`PORTAL_CONFIG_DIR`.
+
+This property can be placed in the ``JAVA_OPTS`` environment variable,
+using the ``-D`` option. For example, in tomcat's :file:`setenv.sh`, add::
+
+  PORTAL_CONFIG_DIR="/var/nfms4redd/portal_config/drc/"
+  JAVA_OPTS="$JAVA_OPTS -DPORTAL_CONFIG_DIR=$PORTAL_CONFIG_DIR"
 
 
 Customizing the portal
@@ -142,7 +149,7 @@ using ``${<message_label>}``, which will be replace with the corresponding value
 .. code-block:: html
 
    <div id="footer_links">
-       <a id="notice_download" href="custom/${notice_url}" target="_blank">${information_note}</a>
+       <a id="notice_download" href="static/${notice_url}" target="_blank">${information_note}</a>
        <a id="satisfaction_survey_link" href="${survey_url}" target="_blank">${satisfaction_survey}</a>
        <a id="user-group" href="http://groups.google.com/group/nfms4redd-users" target="_blank">${nfms_mailing_list}</a>
    </div>
@@ -176,15 +183,17 @@ For the ``logos`` element in the header template, we can set a background image,
 Images and other static resources
 ---------------------------------
 
-Note that in the previous example, the image URL is ``custom/img/logos.png``.
-All the resources starting with ``custom/`` correspond to the ``www/`` custom contents on disk.
-So, for the logo image, it has to be placed under ``$PORTAL_CONFIG_DIR/www/img/logos.png``.
+Note that in the previous example, the image URL is ``static/img/logos.png``.
+All the resources starting with ``static/`` correspond to the ``static/`` directory on portal config dir.
+So, for the logo image, it has to be placed under ``$PORTAL_CONFIG_DIR/static/img/logos.png``.
 
 
 Custom javascript functions
 ---------------------------
 
-**TODO**
+Some custom portal actions have to be defined as javascript functions.
+Place them in :file:``static/custom.js``. For example, to link click
+events to specific statistics:
 
 .. code-block:: js
 

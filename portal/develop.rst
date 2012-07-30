@@ -1,12 +1,33 @@
-=======================
-Building and developing
-=======================
+=================
+Developer's guide
+=================
+
+Getting the code
+================
+
+The nfms4redd portal code is hosted on github. To get a local copy using git, run::
+
+  git clone https://github.com/nfms4redd/nfms-portal.git
 
 
 Building the portal
 ===================
 
-**TODO**
+Project build process is managed by Maven 2. Use this command to build, test and create the deployment web archive (war file)::
+
+  mvn install
+  
+Then get the file in :file:`target/unredd-portal.war`.
+
+Maven can be used also to run the portal. Use::
+
+  mvn jetty:run
+  
+The portal will be accessible at:
+
+  http://localhost:8181/portal/
+
+To use a custom configuration, edit the :file:`pom.xml` file, and change the ``<portal_config_dir>`` property before running jetty.
 
 
 Background technologies
