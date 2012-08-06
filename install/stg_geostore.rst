@@ -3,4 +3,8 @@
 Deploy and configure staging GeoStore
 =====================================
 
-**TODO**
+:file:`/var/tomcat/stg_geostore`
+
+::
+
+  JAVA_OPTS="-server -Xms512m -Xmx1024m -Dgeostore-ovr=$GEOSTORE_OVR_FILE"

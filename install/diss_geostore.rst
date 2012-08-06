@@ -3,4 +3,4 @@
 Deploy and configure dissemination GeoStore
 ===========================================
 
-**TODO**
+:file:`/var/tomcat/diss_geostore`

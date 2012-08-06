@@ -3,4 +3,6 @@
 Deploy and configure user portal (D only)
 =========================================
 
-**TODO**
+:file:`/var/tomcat/diss_frontend`
+
+Copy ``portal.war`` in ``/var/tomcat/diss_frontend/webapps``.
