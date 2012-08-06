@@ -1,7 +1,7 @@
-.. module:: unredd.system_install
+.. module:: unredd.livedvd
 
-Installing and running the System
-=================================
+Installing and running the LiveDVD
+==================================
 
 This chapter walks through the LiveDVD and UNREDD NFMS installation and configuration process. The reader will learn how to run and install the system.
 

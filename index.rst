@@ -15,6 +15,6 @@ Contents:
    admin/index
    portal/index
    testdata/index
+   install/index
 
 .. * :ref:`search`
-
