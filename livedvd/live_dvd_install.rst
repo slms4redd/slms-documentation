@@ -54,7 +54,7 @@ In order to increase the system performaces and, in case of live DVD, to have yo
 
 #. Select the username and password and the hostname, then click on :guilabel:`Forward`.
 
-   .. warning:: This course envisages the use of a ``username``:**geosolutions** with a ``password``: **Geos**. You can choose any ``hostname``.
+   .. warning:: This course envisages the use of a ``username``:**unredd** with a ``password``: **unredd**. You can choose any ``hostname``.
    
    .. figure:: img/dvd_install5.jpg
       :width: 600
@@ -87,10 +87,10 @@ In order to increase the system performaces and, in case of live DVD, to have yo
 
    .. note::  The OS user name and password to use for this workshop are:
    
-			  - username: `geosolutions`
-			  - password: `Geos`
+			  - username: `unredd`
+			  - password: `unredd`
 	  
-   .. note::  For each installed application on the system we used the user `geosolutions` with password `Geos`.
+   .. note::  For each installed application on the system we used the user `unredd` with password `unredd`.
 
 At this point you should have a fully functional environment to run GeoServer, GIS tools and clients on your dataset.
 

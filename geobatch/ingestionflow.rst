@@ -17,7 +17,7 @@ Flow configuration file
 =======================
 
 Here's a sample flow definition for the data ingestion:
-::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
   <FlowConfiguration>
     <id>ingestionFlow</id>
@@ -106,7 +106,7 @@ This is the staging GeoServer::
                <geoserverPWD>secret!</geoserverPWD>
 
                <!-- Editable part: geoserver workspace for all layers -->
-               <workspace>geosolutions</workspace>
+               <workspace>unredd</workspace>
            </geoServerConfig>
 
 The final flow configuration lines can be left as they are ::

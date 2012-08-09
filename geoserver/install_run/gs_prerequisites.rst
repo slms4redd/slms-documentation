@@ -81,16 +81,16 @@ Apache Tomcat is an open source software implementation of the ``Java Servlet`` 
       export CLASSPATH=/opt/apache-tomcat-6.0.30/lib/servlet-api.jar
       export CLASSPATH=/opt/apache-tomcat-6.0.30/lib/jsp-api.jar
       echo "Tomcat is started"
-      su - geosolutions -c "/opt/apache-tomcat-6.0.30/bin/startup.sh"
+      su - unredd -c "/opt/apache-tomcat-6.0.30/bin/startup.sh"
       ;;
       stop)
-      su - geosolutions -c "/opt/apache-tomcat-6.0.30/bin/shutdown.sh -force"
+      su - unredd -c "/opt/apache-tomcat-6.0.30/bin/shutdown.sh -force"
       echo "Tomcat is stopped"
       ;;
       restart)
-      su - geosolutions -c "/opt/apache-tomcat-6.0.30/bin/shutdown.sh -force"
+      su - unredd -c "/opt/apache-tomcat-6.0.30/bin/shutdown.sh -force"
       echo "Tomcat is stopped"
-      su - geosolutions -c "/opt/apache-tomcat-6.0.30/bin/startup.sh"
+      su - unredd -c "/opt/apache-tomcat-6.0.30/bin/startup.sh"
       echo "Tomcat is started"
       ;;
       *)
@@ -119,8 +119,8 @@ Apache Tomcat is an open source software implementation of the ``Java Servlet`` 
 	            -XX:SoftRefLRUPolicyMSPerMB=36000
 				-XX:MaxPermSize=128m"
 
-	LD_LIBRARY_PATH="/home/geosolutions/geoserver_src/nativelibs"
-	GDAL_DATA="/home/geosolutions/geoserver_src/gdal_data"
+	LD_LIBRARY_PATH="/home/unredd/geoserver_src/nativelibs"
+	GDAL_DATA="/home/snredd/geoserver_src/gdal_data"
 
    .. warning:: In this workshop the JAVA_HOME is defined at the Tomcat startup. If you define the JAVA_HOME variable inside the .bashrc file you must not define it here. 
 				

@@ -34,8 +34,8 @@ This task shows how to add a PostGIS layer into GeoServer:
 
    - :guilabel:`Data source name`, 'shape'
    - :guilabel:`database`, 'shape' the name of the database created in previous workshop step.
-   - :guilabel:`user`, 'geosolutions' the name of the user database owner.
-   - :guilabel:`password`, 'Geos' the user password.
+   - :guilabel:`user`, 'unredd' the name of the user database owner.
+   - :guilabel:`password`, 'unredd' the user password.
    
    and click :guilabel:`Save`.
 

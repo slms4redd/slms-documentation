@@ -18,7 +18,7 @@ This section provides better instructions to configure an Image Mosaic
 We will configure an ImageMosaic using the optimized dataset. As explained in the :ref:`Maps - Raster <geoserver.mosaic>` section, follow the steps 1 to 6. Then:
 
 #. Specify a proper name (as an instance, :file:`boulder_bg_optimized`) in the :guilabel:`Data Source Name` field of the interface. 
-#. Specify :file:`file:/home/geosolutions/Desktop/workshop/data/user_data/optimized` as URL of the sample data in the :guilabel:`Connections Parameter's - URL` field. 
+#. Specify :file:`file:/home/unredd/Desktop/workshop/data/user_data/optimized` as URL of the sample data in the :guilabel:`Connections Parameter's - URL` field. 
 
    .. figure:: img/mosaic_addraster.jpg
 

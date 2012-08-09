@@ -25,7 +25,7 @@ This section covers the task of adding and publishing a ImageMosaic file with Ge
 
       Add a new Image Mosaic
 
-#. On the :guilabel:`Add Raster Data Source` page enter :file:`/home/geosolutions/Desktop/workshop/data/user_data/aerial` in the :guilabel:`URL` field, "boulder_bg" in the :guilabel:`Data Source Name` and :guilabel:`Description` fields, and click :guilabel:`Save`.
+#. On the :guilabel:`Add Raster Data Source` page enter :file:`/home/unredd/Desktop/workshop/data/user_data/aerial` in the :guilabel:`URL` field, "boulder_bg" in the :guilabel:`Data Source Name` and :guilabel:`Description` fields, and click :guilabel:`Save`.
 
    .. figure:: img/raster2.png
 

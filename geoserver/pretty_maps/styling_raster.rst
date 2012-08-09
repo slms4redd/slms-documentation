@@ -31,7 +31,7 @@ Adding hillshade
 
 #. Open a shell (CTRL+ALT+T) and run::
 
-     cd /home/geosolutions/geoserver_data/data/boulder
+     cd /home/unredd/geoserver_data/data/boulder
 
      gdaldem hillshade -z 5 -s 111120 srtm_boulder.tiff srtm_boulder_hs.tiff -co tiled=yes
 
@@ -84,7 +84,7 @@ Adding hillshade
 
 #. Click on  :guilabel:`browse` link in order to set the GeoTIFF location in the :guilabel:`URL` field.
 
-   .. note:: make sure to specify the :file:`srtm_boulder_hs.tiff` previously created with gdaldem, which should be located at :file:`/home/geosolutions/geoserver_data/data/boulder`
+   .. note:: make sure to specify the :file:`srtm_boulder_hs.tiff` previously created with gdaldem, which should be located at :file:`/home/unredd/geoserver_data/data/boulder`
 
 #. Click :guilabel:`Save`. 
 

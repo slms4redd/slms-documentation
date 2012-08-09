@@ -13,7 +13,7 @@ Creating and setting a new GeoServer Data Directory
 #. The first thing to do is to correctly configure the GEOSERVER_DATA_DIR. To increase the portability of their data and to facilitate updates GeoServer, in the default Workshop configuration the ``GEOSERVER_DATA_DIR`` is configured under the directory::
 	
 	
-	/home/geosolutions/geoserver_data
+	/home/unredd/geoserver_data
 	
 	
    Generally this is not an issue, but if you run the system from the LiveDVD this folder resides in memory. The first thing to do is to move this folder into a local persistent storage.
@@ -21,15 +21,15 @@ Creating and setting a new GeoServer Data Directory
 	
 	* Move the ``GEOSERVER_DATA_DIR`` somewhere in the persistent storage using the command::
 	
-		sudo mv -f /home/geosolutions/geoserver_data <TARGET_DIR>
+		sudo mv -f /home/unredd/geoserver_data <TARGET_DIR>
 	
 	
 	* Make a symbolic link to the ``GEOSERVER_DATA_DIR`` by issuing the command::
 	
-		ln -s <TARGET_DIR> /home/geosolutions/geoserver_data
+		ln -s <TARGET_DIR> /home/unredd/geoserver_data
 	
 	
-   .. warning:: Check that the user ``geosolutions`` has permissions to read/write all the files/folder inside the ``GEOSERVER_DATA_DIR``.
+   .. warning:: Check that the user ``unredd`` has permissions to read/write all the files/folder inside the ``GEOSERVER_DATA_DIR``.
 
    .. note:: Instead of creating a symbolic link you can configure GeoServer in order to allow it to point to the new ``GEOSERVER_DATA_DIR``. To do that edit the file :file:`/opt/tomcat-geoserver/webapps/geoserver/WEB-INF/web.xml` and modify the context param ``GEOSERVER_DATA_DIR``.
 

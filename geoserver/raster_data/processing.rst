@@ -110,7 +110,7 @@ The following instructions allow you to get information about the sample dataset
 
 #. Run::
 
-     cd /home/geosolutions/Desktop/workshop/data/user_data/aerial
+     cd /home/unredd/Desktop/workshop/data/user_data/aerial
 
      gdalinfo 13tde815295_200803_0x6000m_cl.tif
 
@@ -171,7 +171,7 @@ The following steps provide instructions to tile the sample dataset previously c
 
 #. Create a directory to store the converted data::
 
-     cd /home/geosolutions/Desktop/workshop/data/user_data
+     cd /home/unredd/Desktop/workshop/data/user_data
      
      mkdir retiled 
 
@@ -211,7 +211,7 @@ Where the meaning of the main parameters is summarized below:
 
 #. Run::
 
-     cd /home/geosolutions/Desktop/workshop/data/user_data/retiled
+     cd /home/unredd/Desktop/workshop/data/user_data/retiled
 
      gdaladdo -r average 13tde815295_200803_0x6000m_cl.tif 2 4 8 16 32
 
@@ -232,7 +232,7 @@ Instead of manually repeating these 2 steps (retile + add overviews) for each fi
 
 #. Run::
 
-     cd /home/geosolutions/Desktop/workshop/data/user_data
+     cd /home/unredd/Desktop/workshop/data/user_data
 
      mkdir optimized
 
@@ -299,7 +299,7 @@ Where the meaning of the main parameters is summarized below:
 
 #. Run::
 
-     cd /home/geosolutions/Desktop/workshop/data/user_data/retiled
+     cd /home/unredd/Desktop/workshop/data/user_data/retiled
 
      gdalwarp -t_srs "EPSG:4326" -co "TILED=YES" 13tde815295_200803_0x6000m_cl.tif 13tde815295_200803_0x6000m_cl_warped.tif
 

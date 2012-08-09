@@ -14,7 +14,7 @@ This task shows how to load a ShapeFile into PostGIS database:
 
 #. Move to the GeoServer data directory, so that the Mainrd.shp file is in the current directory::
     
-     cd /home/geosolutions/Desktop/workshop/data/user_data
+     cd /home/unredd/Desktop/workshop/data/user_data
      ls Mainrd.*
 
 #. Enter the following command and press enter to load the ShapeFile into 'shape' database::

@@ -1,6 +1,6 @@
 .. geoserver.logging:
 
-Logging all requests on the file system 
+Logging all requests on the file system
 =======================================
 
 The history mode logs all requests into a database. This can put a very significant strain
@@ -19,14 +19,14 @@ The ``monitor.properties`` file can contain the following items to enable and co
 #. Go to the ${GEOSERVER_DATA_DIR}/monitoring and open the ``monitor.properties`` then append the following configuration::
 
      audit.enabled=true
-     audit.path=/home/geosolutions
+     audit.path=/home/unredd
      audit.roll_limit=20
 
-#. Go to the Map `Map Preview <http://localhost:8080/geoserver/web/?wicket:bookmarkablePage=:org.geoserver.web.demo.MapPreviewPage>`_ and open the `geosolutions:states` layer clicking on the ``OpenLayer`` link.
+#. Go to the Map `Map Preview <http://localhost:8080/geoserver/web/?wicket:bookmarkablePage=:org.geoserver.web.demo.MapPreviewPage>`_ and open the `geosolutions:states` layer clicking on the ``OpenLayers`` link.
 
 #. Perform a few times zoom the map.
 
-#. Open the new created log file (named like ``geoserver_audit_yyyymmdd_nn.log``) located at /home/geosolutions. 
+#. Open the new created log file (named like ``geoserver_audit_yyyymmdd_nn.log``) located at /home/unredd. 
 
    .. note::
 

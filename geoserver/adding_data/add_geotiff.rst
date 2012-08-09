@@ -24,7 +24,7 @@ This section provides instructions to add and publish a GeoTIFF file.
 
 #. Click on browse link in order to set the GeoTIFF location in the :guilabel:`URL` field.
 
-   .. note:: The 13tde815295_200803_0x6000m_cl.tif is located at :file:`/home/geosolutions/Desktop/workshop/data/user_data/aerial/13tde815295_200803_0x6000m_cl.tif`
+   .. note:: The 13tde815295_200803_0x6000m_cl.tif is located at :file:`/home/unredd/Desktop/workshop/data/user_data/aerial/13tde815295_200803_0x6000m_cl.tif`
 
    .. figure:: img/addgeotiff1.png
       :width: 800
