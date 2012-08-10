@@ -1,18 +1,18 @@
-========
-GeoStore
-========
+===================
+GeoStore Data Model
+===================
 
 GeoStore is a pure backend webapp, used as a storage for any type of information.
 
 The interesting points about GeoStore are its capability of searching data by associated metadata, 
-and the ability to interact with the stored using simple HTTP REST calls. 
+and the ability to interact with the stored resources using simple HTTP REST calls. 
 It means that backend applications can store data in GeoStore, that can then be easily retrieved by a web client.
 In our specific case, a good example are the charts created on the layers statistics.
 
 
 Data inside GeoStore can be modeled after the specific application needs.
 
-In the following diagram you can see the different kinds of resources used in the NFMS UNREDD system, and how the ingestion flow 
+In the following diagram you can see some of the resource categories used in the NFMS UNREDD system, and how the ingestion flow 
 interacts with them:
 
 
@@ -24,7 +24,7 @@ interacts with them:
    UNREDD model mapped on GeoStore
 
 
-For the NFMS we need 6 specific types of Resources:
+For the NFMS we need the following specific types of Resources:
 
  **Layer**:
    *Basic information about the GeoServer temporal layers that can accept ingestion of new time coordinates.*
@@ -61,3 +61,5 @@ For the NFMS we need 6 specific types of Resources:
 
    These resources are created automatically during the ingestion (or reprocessing) flow.
 
+ **Feedback**:
+   Feedback resources are created by Portal users that want to comment on the published information.

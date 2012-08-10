@@ -1,8 +1,8 @@
 .. module:: unredd.install
 
-=================================================================
-NFMS in Production - Installation guide for system administrators
-=================================================================
+==========================================================
+Deploying NFMS in Production: System Administrator's Guide
+==========================================================
 
 This module describes the step by step manual installation and configuration of the nfms platform, needed in a production environment.
 

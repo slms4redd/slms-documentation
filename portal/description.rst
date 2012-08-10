@@ -308,12 +308,53 @@ When the calculation is complete, you will receive by email the URL with the lin
 Feedback
 ========
 
--- To be implemented --
+If you want to send comments on the published resources, click on the *Feedback* button on the header.
+The feedback dialog will open:
 
-To send feedback about an area:
+.. figure:: img/feedback_dialog.png
+   :align: center
 
-* click on the Feedback button on the header and start drawing the contour of the area you want give feedback to
-* double click to close the polygon
-* a dialog will show you the list of the available layers for which feedback is enabled
-* after you choose the layer and click on the ``Calculate`` button, enter the feedback and the captcha text and click ``Ok``.
+   Feedback dialog
 
+1. Select the **layer** you want to give feedback on (for example, *REDD+ Projects*). To appear in the selector, the layer must be active.
+2. Use the **drawing tools** to delimitate the area or areas your comments are refering to. The toolbar offers three different tools:
+
+   * |tb_add| **Add Polygon** to draw new areas on the map.
+   * |tb_get| **Get feature from selected layer** to retrieve a geometry from a layer. This tool is only active on queryable vector layers.
+   * |tb_edit| **Edit Polygon** to change the shape of an area. Drag the nodes to change the shape, or hit *del* key to delete existing vertices or the entire polygon.
+
+3. Write your contact **name** and **email**. System administrators may want to contact you for further details on your request.
+4. Add a **feedback** message describing your concerns.
+5. Write the **reCAPTCHA** words and **Submit**.
+
+.. |tb_add| image:: img/toolbar_button_add.png
+.. |tb_get| image:: img/toolbar_button_get.png
+.. |tb_edit| image:: img/toolbar_button_edit.png
+
+
+Feedback example
+----------------
+
+Let's say that you detect a *REDD+ project region* that is out of date:
+
+.. figure:: img/feedback_polygon_view.png
+   :align: center
+
+   Identify an element worth comenting on the map
+
+First, click on *Feedback* and select the *REDD+ Projects* layer. Activate the |tb_get| tool and click inside the region.
+The original polygon will be retrieved and presented as an orange, editable geometry:
+
+.. figure:: img/feedback_polygon_get.png
+   :align: center
+
+   Get an existing element from the layer
+
+Then, select the |tb_edit| tool to change its shape draging the nodes:
+
+.. figure:: img/feedback_polygon_edit.png
+   :align: center
+
+   Change its shape
+   
+Finally, add a *feedback* text comment. For example: *REDD+ Project has been extended to the eastern valley*.
