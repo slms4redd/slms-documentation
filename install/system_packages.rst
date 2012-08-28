@@ -23,43 +23,6 @@ Install under ``/opt``, so that the dir ``opt/`` will look like::
   drwxr-xr-x 9 root root 4096 Aug  1 15:40 apache-tomcat-6.0.32
   lrwxrwxrwx 1 root root   20 Aug  1 15:41 tomcat -> apache-tomcat-6.0.32
 
-Maven
------
-
-::
-
-  mkdir  /usr/local/java
-  cd  /usr/local/java
-  wget http://mirror.nohup.it/apache//maven/binaries/apache-maven-2.2.1-bin.tar.gz
-  tar xzvf apache-maven-2.2.1-bin.tar.gz
-  ln -s apache-maven-2.2.1 maven
-  ln -s /usr/local/java/maven/bin/mvn /usr/bin/
-
-Iptables
---------
-
-::
-
-  iptable -A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
-  iptable -A INPUT  -m state --state NEW -m tcp -p tcp --dport 64000:65535 -j ACCEPT
-  iptable-save
-
-vsftpd
-------
-
-Add users folder ``/etc/vsftpd/users/`` and user specific configuration.
-
-vsftpd users are system users which have ftp R/W permissions on the
-``~/ftp`` folder.
-
-To make no login system users to login on vsftp service change the
-pam authentication config::
-
-  nano /etc/pam.d/vsftpd
-
-Commenting out the following line::
-
-  auth    required pam_shells.so
 
 httpd
 -----

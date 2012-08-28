@@ -7,6 +7,12 @@ Tomcat installation steps
 -------------------------
 
 This guide describes the tomcat installation steps.
+
+Autostart scripts are a litte different according to the Linux distribution you are using:
+ * If you are using a **Debian** or or derived distribution (e.g. **Ubuntu**), you will only need a single startup file in ``/etc/init.d`` directory for each tomcat instance.
+ * If you are using a **RedHat** or derived distribution (e.g. **CentOS**), you will also need a further helper file (``tomcatRunner.sh``).
+Note that the startup scripts of the two distribution families differ.
+
 Requires a copy of the scripts tomcatRunner.sh and geoserver0.sh
 from the unredd production server.
 
@@ -15,16 +21,18 @@ preferably under version control (git, gist?).
 
 1. Install in ``/opt/apache-tomcat-6.0.35/`` a full tomcat instance
    ``CATALINA_HOME=/opt/apache-tomcat-6.0.35/``
-
-2. Create a folder ``/var/geoserver/`` to put all the ``CATALINA_BASE`` dirs.
+2. Create a folder ``/var/tomcat/``, where all the ``CATALINA_BASE`` dirs will be created.
    Create one dir for each application. Every instance will have the
-   ``CATALINA_BASE`` path in the form ``/var/geoserver/<instance_name>``.
+   ``CATALINA_BASE`` path in the form ``/var/tomcat/<instance_name>``.
    **NB**: Is very important to use consistent naming for each instance.
+3. In all ``CATALINA_BASE=/var/tomcat/<instance_name>``:  
 
-3. In all ``CATALINA_BASE=/var/geoserver/<instance_name>`` copy from
-   ``CATALINA_HOME`` the dirs ``conf``, ``logs``, ``temp``, ``webapps``,
-   ``work``, ``bin``, ``lib``. Empty the ``bin`` and ``lib`` directories
-   and create within the ``bin`` dir the file ``setenv.sh``.
+   a. create the directories ``logs``, ``temp``, ``webapps``,
+      ``work``, ``bin``, ``lib`` .
+
+   #. Copy from ``CATALINA_HOME`` the dir ``conf`` . 
+
+   #. Create within the ``bin`` dir the file ``setenv.sh`` .
  
 4. Edit each ``server.xml`` in all ``CATALINA_BASE/conf`` dirs changing
    the port number for shutdown, ajp and http connector. Use a rational
@@ -73,8 +81,8 @@ diss_geoserver 8025  8105  8205  /var/tomcat/diss_geoserver
 diss_frontend  8026  8106  8206  /var/tomcat/diss_frontend
 ============== ====  ====  ====  ==========================
 
-To see wich tomcat instances are running, you can watch the dir
-``/var/run/tomcat/`` wich contains a file called like the instances
+To see which tomcat instances are running, you can watch the dir
+``/var/run/tomcat/`` which contains a file called like the instances
 for every running instance (inside the file is stored the PID).
 
 

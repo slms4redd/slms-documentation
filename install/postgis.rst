@@ -3,14 +3,22 @@
 Setup PostGIS (S+D)
 ===================
 
-* stg_geostore (stg_geostore / )
-* stg_geoserver (stg_geoserver / )
-* diss_geostore (diss_geostore / )
-* diss_geoserver (diss_geoserver / )
+You will need these PostGIS databases:
+
+stg_geostore
+   DB for GeoStore webapp on the staging area.
+stg_geoserver 
+   DB for GeoServer vector layers on the staging area.
+diss_geostore 
+   DB for GeoStore webapp on the dissemination system.
+diss_geoserver
+   DB for GeoServer vector layers on the dissemination system.
 
 
 Create users
 ------------
+
+Different users will be used for the various databases.
 
 stg_geostore::
 
