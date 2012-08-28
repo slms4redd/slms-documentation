@@ -13,11 +13,23 @@ Flow diagram
    Ingestion flow
 
 
+Some insights on the ingestion flow
+===================================
+
+The Ingestion flow is quite complex, so it does not rely on GeoBatch internal Action chaining.
+
+It has been implemented as a single Action which internally invokes other existing standard Actions (such as the Unzip action, the GeoStore action, the Scripting Action).
+
+
+
+   
 Flow configuration file
 =======================
 
-Here's a sample flow definition for the data ingestion:
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::
+The Ingestion flow interacts with many external objects, such as PostGres, GeoStore, GeoServer.
+Configuration customizations will be mainly related to how the flow will connect with such external peers.
+
+Here's a sample flow definition for the data ingestion::
 
   <FlowConfiguration>
     <id>ingestionFlow</id>
@@ -33,7 +45,7 @@ Here's a sample flow definition for the data ingestion:
 
 Next directory definition can be customized: it's the directory that GeoBatch monitors for new files::
        
-       <watchDirectory>/var/geobatch/config/ingestion</watchDirectory>
+       <watchDirectory>/var/geobatch/input/ingestion</watchDirectory>
 
 ::
 
