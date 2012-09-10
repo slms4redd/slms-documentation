@@ -73,52 +73,31 @@ Let’s see in details each of them and explain how they are used.
 OpenLayers
 ..........
 
-**Version: 2.11**
+**Version: 2.12**
 
-.. hint::
+To keep JavaScript overload to a minimum, a custom profile is used to build the OpenLayers javascript file.
 
-   Replaced Handlers/Click.js with the one from version 2.10 to correct a bug. Future versions of OpenLayers might not need this hack.
+The build config file, where the selected OL classes are listed, can be found on nfms-portal github project,
+under :file:`lib/ol-unredd.cfg`. The OpenLayers source files are linked as a GitHub Submodule pointing to
+the official OpenLayers GitHub repository.
 
-The following build config file has been used to customize OpenLayers.js thus making it lighter to download by browsers
+.. note::
 
-::
+   If new OpenLayers classes are needed, add them manually to the build config file, and rebuild.
+   The :file:`lib/ol-build.sh` helper script will build and copy the file to the final location. 
 
-  OpenLayers/Map.js
-  OpenLayers/Layer/WMS.js
-  OpenLayers/Projection.js
-  OpenLayers/Control/Navigation.js
-  OpenLayers/Control/DrawFeature.js
-  OpenLayers/Request/XMLHttpRequest.js
-  OpenLayers/Control/Scale.js
-  OpenLayers/Control/WMSGetFeatureInfo.js
-  OpenLayers/Format/WMSGetFeatureInfo.js
-  OpenLayers/Format/GML.js
-  OpenLayers/Layer/Markers.js
-  OpenLayers/Layer/Wikimapia.js
-  OpenLayers/Layer/Vector.js
-  OpenLayers/Renderer/Canvas.js
-  OpenLayers/Renderer/VML.js
-  OpenLayers/Handler/Polygon.js
-  OpenLayers/Icon.js
-  OpenLayers/Marker.js
-  OpenLayers/Strategy/Fixed.js
-  OpenLayers/Protocol/HTTP.js
-  OpenLayers/Format/KML.js
-
-The library has been built using the Google Clojure Compiler. To do so (from the OpenLayers *README* file):
-
-* Copy `clojure-compiler.jar` into the tools directory
-* Copy the `unredd.cfg` file (content above) into the build directory
-* From inside the build dir, run python ``build.py -c closure unredd OpenLayers.js``
+The javascript file is built uncompressed (not *minified*), so it can be used for debugging.
+The *minification* process and other load time optimizations will be performed automatically at runtime,
+via `packtag <http://sourceforge.net/projects/packtag/>`_.
 
 OpenLayers is used to implement the following mapping capabilities:
 
 * Show map layers
 * Pan and zoom map
 * Query - get statistics about a selected polygon
-* Feedback
+* Draw and retrieve polygons on feedback
 * Real-time statistics
-* Set layers transparency
+* Set layer transparency
 
 JQuery
 ......
