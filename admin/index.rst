@@ -186,6 +186,102 @@ Layer updates represent time instance for a given layer
 
 .. _layer-update-list:
 
+
+Ingest a new time instance for the layer
+========================================
+
+We are now going to see how to ingest a new ``LayerUpdate``.
+We will manually simulate the behavior of the analysis software
+by copying the zip files containing the spatial data and XML definition
+into the GeoBatch ``ingest`` directory, thus triggering the GeoBatch ingestion flow.
+
+But before we go on with the ingestion flow, let's have a look to how the zip
+files are built internally: it must contain an XML file ``info.xml``, and a directory
+``data``.
+
+* The directory ``data`` contains the geodata to be published in the dissemination system, and to be used to compute statistics.
+* The content of the file ``info.xml`` is:
+
+  .. code-block:: xml
+  
+    <?xml version="1.0" encoding="UTF-8"?>
+    <info>
+      <layername>forest_mask</layername>  
+      <format>raster</format>
+      <year>2012</year>
+      <month>08</month>
+      <day>15</day>
+    </info>
+
+  where
+  
+  * ``<layername>`` is the name of the layer this update should be appended to
+  * ``<format>`` may be raster or vector
+  * ``<year>`` is a mandatory element in a 4 digit format representing the year this update should be referenced to
+  * ``<month>`` is a optional element in a 2 digit representing the month this update should be referenced to (ranging from 01 to 12)
+  * ``<month>`` is a optional element in a 2 digit representing the month this update should be referenced to
+
+To start the ingestion, generate a zip file with the described contents, and copy it into ``/var/geobatch/input/ingestion/``.
+
+You can view the status of the ingestion flow on the GeoBatch admin interface:
+
+* Browse to geobatch main page.
+* Click on *Manage flows*
+* Insert user name and password and click *Submit*
+* Click on *IngestionFlow*
+* Click on *Instances*
+
+You should see one instance running or completed:
+
+.. figure:: img/ingestion_flow_1.png
+   :align: center
+   :scale: 80 %
+
+You can also view the log for the ingestion you just did by clicking on the *instance logs* icon.
+
+.. figure:: img/ingestion_flow_1_log.png
+   :align: center
+   :scale: 80 %
+
+
+You can also check that the store and layer have been created on GeoServer by GeoBatch:
+
+* Browse to the geoserver main page.
+* Insert user name and password and click *Submit*
+* Click on *Stores*
+* Check that the new store is there (same name as Layer in GeoBatch)
+  
+  .. figure:: img/geoserver_check_ingestion_1.png
+     :align: center
+     :scale: 80 %
+
+* Click on *Layers*
+* Check that the layer is there
+
+  .. figure:: img/geoserver_check_ingestion_2.png
+     :align: center
+     :scale: 80 %
+
+
+For the first layer update, the default style and the time dependency for the layer has to be set
+in GeoServer.
+
+* Click on *Layers*
+* Click on layer name
+* Click on the *Publishing* tab
+* Under the *Default style* menu choose the desired style.
+
+  .. figure:: img/forest_mask_style.png
+     :align: center
+
+* Click on the *Dimension* tab
+* Check the *Enabled* checkbox
+* Under the *Presentation* menu choose *List*
+
+  .. figure:: img/forest_mask_dimensions.png
+     :align: center
+
+
 Layer update list
 =================
 

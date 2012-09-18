@@ -355,8 +355,13 @@ Follows a description of each element in the `layers` object:
 * ``queryable`` (*optional*): ``"true"`` or ``"false"`` (defaults to ``"false"``) whether the layer can be queried or not.
 * ``wmsTime``: it can be either:
 
-  * a list of time instances (i.e. `"2000-01-01T00:00:00.000Z,2005-01-01T00:00:00.000Z"`)
-  * A reference to a GeoStore layer. In this case, the value is constructed with a replacement tag ``${time.**layer_name**}``. For example, ``${time.forest_mask_mosaic}`` will match the ``forest_mask_mosaic`` layer in GeoStore, so the time values will read from GeoStore's `layerUpdate` resources for the given layer.
+  * a list of time instances, using the following formats:
+
+     * "YYYY", for yearly data. i.e. ``"2012"``
+     * "YYYY-MM", for monthly data. i.e. ``"2012-08"``
+     * "YYYY-MM-DD", for daily data. i.e. ``"2012-08-15"``
+
+  * A reference to a GeoStore layer. In this case, the value is constructed with a replacement tag ``${time.**geostore_layer_name**}``. For example, ``${time.forest_mask_mosaic}`` will match the ``forest_mask_mosaic`` layer in GeoStore, so the time values will read from GeoStore's `layerUpdate` resources for the given layer.
 
 The ``legend``, ``sourceLink`` and ``sourceLabel`` elements are used to show the layer legends in the Legend pane:
 
