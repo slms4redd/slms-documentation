@@ -1,6 +1,6 @@
-=====================
-Portal User Interface
-=====================
+====================
+Dissemination Portal
+====================
 
 .. toctree::
    :maxdepth: 2

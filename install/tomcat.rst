@@ -1,7 +1,7 @@
 .. _unredd-install-tomcat_instances:
 
-Preparing tomcat instances (S+D)
-================================
+Preparing multiple tomcat instances
+===================================
 
 Run the steps described in :ref:`unredd-install-tomcat6` before reading this chapter.
 
@@ -498,8 +498,8 @@ Check their status:
   chkconfig --list
 
 
-Apache HTTP mapping
--------------------
+AJP proxying
+------------
 
 Configurations to connect to all backend webapp throught AJP are
 in ``/etc/httpd/conf.d/proxy_ajp.conf``.

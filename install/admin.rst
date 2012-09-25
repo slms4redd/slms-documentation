@@ -1,29 +1,42 @@
 .. module:: unredd.install.admin
 
-Deploy and configure admin portal (S only)
-==========================================
+Deploy and configure Administration interface
+=============================================
 
-:file:`/var/tomcat/stg_frontend`
+Simply copy the application file ``unredd-admin.war`` to the tomcat webapps directory. For example::
 
-* Rename the war from ``unredd-admin.war`` to ``stg_frontend.war``.
-* Upload ``stg_frontend.war`` into ``/var/tomcat/stg_frontend/webapps``.
-* Edit the file ``unredd_admin_applicationContext.xml``:
+  sudo cp unredd-admin.war /var/tomcat/admin/webapps/admin.war
 
-  * Set ``geostoreRestUrl`` constructor-arg value to
-     ``http://localhost:8200/stg_geostore/rest``
-  * Set ``geobatchFlowSaveDir`` property value in the configure bean to
-    ``/var/geobatch/input``
+This will install and run the admin interface, accessible in:
 
-Chart scripts
--------------
+  http://localhost/admin/
 
-* Create the directory ``/var/geobatch/config/chartscripts``.
-* Upload the sample script file ``deforestation_stats.groovy``, the
-  ``lang.csv`` file and the html template file
-  ``deforestation_chart_template.html`` into
-  ``/var/geobatch/config/chartscripts``.
 
-::
+Application context
+-------------------
 
-  chown -R tomcat:tomcat chartscripts/
-  chmod ug+x deforestation_stats.groovy
+Edit the file ``/var/tomcat/admin/webapps/admin/WEB-INF/unredd_admin_applicationContext.xml`` and set the GeoStore connection parameters (``geostoreRestUrl``, ``geostoreUsername`` and ``geostorePassword``).
+
+This is an excerpt of application context file:
+
+.. code-block:: xml
+
+    <bean id="geostoreRestUrl" class="java.lang.String">
+        <constructor-arg type="String" value="http://localhost/stg_geostore/rest"/>
+    </bean>
+    <bean id="geostoreUsername" class="java.lang.String">
+        <constructor-arg type="String" value="admin"/>
+    </bean>
+    <bean id="geostorePassword" class="java.lang.String">
+        <constructor-arg type="String" value="admin"/>
+    </bean>
+
+Use the same password set in GeoStore configuration.
+
+In the same file, set the path to the staging GeoBatch input directory. For example:
+
+.. code-block:: xml
+
+    <bean id="configure" class="org.fao.unredd.Configure">
+        <property name="geobatchFlowSaveDir" value="/var/stg_geobatch/input" />
+    </bean>

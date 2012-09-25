@@ -1,7 +1,7 @@
 .. module:: unredd.install.requirements
 
-System requirements (S+D)
-=========================
+Hardware requirements
+=====================
 
 System requirements depend very much on the load of the system and the amount of data being managed.
 
@@ -37,4 +37,3 @@ Plus the memory needed by the Operating System and other running services. A min
 Dynamic or real-time statistics will determine the processing demands. Depending on the complexity of real-time calculations, the dissemination area may need a cluster of machines working in parallel.
 
 Disk requirements depend mainly on the amount of raster data being published in geoserver, and on the size of the tile cache.
-

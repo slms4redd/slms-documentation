@@ -1,53 +1,8 @@
-=====================
-Install and customize
-=====================
+.. _unredd-portal-customize:
 
-
-Installing and running the portal
-=================================
-
-Simply copy the application file ``unredd-portal.war`` to the tomcat webapps directory. For example::
-
-  sudo cp unredd-portal.war /var/tomcat/stg_geostore/webapps
-
-This will install and run the portal with the default (sample) configuration, accessible in:
-
-  http://localhost:8200/unredd-portal/
-
-.. note::
-
-   The following instructions will show how to redirect the application to the standard http port (80) on the Virtual Machine installation.
-   
-   Edit Apache ajp configuration file::
-   
-     sudo gedit /etc/apache2/mods-enabled/proxy_ajp.conf
-
-   And add these lines::
-    
-     ProxyPass        /portal    ajp://localhost:8100/unredd-portal
-     ProxyPassReverse /portal    ajp://localhost:8100/unredd-portal
-     ProxyPassReverse /portal/   ajp://localhost:8100/unredd-portal/
-
-   Restart Apache::
-
-     sudo service apache2 restart
-
-   You should see the sample portal in:
-
-     http://localhost/portal/
-
-Setting the ``$PORTAL_CONFIG_DIR``
-==================================
-
-To inform the application about the country specific data location,
-set a Java System Property called :file:`PORTAL_CONFIG_DIR`.
-
-This property can be placed in the ``JAVA_OPTS`` environment variable,
-using the ``-D`` option. For example, in tomcat's :file:`setenv.sh`, add::
-
-  PORTAL_CONFIG_DIR="/var/nfms4redd/portal_config/drc/"
-  JAVA_OPTS="$JAVA_OPTS -DPORTAL_CONFIG_DIR=$PORTAL_CONFIG_DIR"
-
+=========
+Customize
+=========
 
 Customizing the portal
 ======================

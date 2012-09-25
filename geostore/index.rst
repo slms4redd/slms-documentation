@@ -1,6 +1,8 @@
-===================
-GeoStore Data Model
-===================
+.. _unredd-geostore:
+
+========
+GeoStore
+========
 
 GeoStore is a pure backend webapp, used as a storage for any type of information.
 
@@ -9,6 +11,9 @@ and the ability to interact with the stored resources using simple HTTP REST cal
 It means that backend applications can store data in GeoStore, that can then be easily retrieved by a web client.
 In our specific case, a good example are the charts created on the layers statistics.
 
+
+Data Model
+----------
 
 Data inside GeoStore can be modeled after the specific application needs.
 
