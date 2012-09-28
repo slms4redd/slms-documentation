@@ -140,31 +140,31 @@ diss_geoserver
 Create users
 ............
 
-Different users will be used for the various databases.
+Different users will be used for the various databases. Use the following instructions in psql console, setting the passwords as needed.
+
+To enter the psql console, run::
+
+  sudo -u postgres psql
 
 stg_geostore::
 
   postgres=# CREATE USER stg_geostore LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  CREATE ROLE
-  ALTER USER stg_geostore WITH PASSWORD 'Unr3dd';
+  ALTER USER stg_geostore WITH PASSWORD '------';
 
 diss_geostore::
 
   postgres=# CREATE USER diss_geostore LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  CREATE ROLE
-  ALTER USER diss_geostore WITH PASSWORD 'Unr3dd';
+  ALTER USER diss_geostore WITH PASSWORD '------';
   
 stg_geoserver::
 
   postgres=# CREATE USER stg_geoserver LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  CREATE ROLE
-  ALTER USER stg_geoserver WITH PASSWORD 'Unr3dd';
+  ALTER USER stg_geoserver WITH PASSWORD '------';
 
 diss_geoserver::
 
   postgres=# CREATE USER diss_geoserver LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  CREATE ROLE
-  ALTER USER diss_geoserver WITH PASSWORD 'Unr3dd';
+  ALTER USER diss_geoserver WITH PASSWORD '------';
 
 
 Create databases
@@ -172,68 +172,47 @@ Create databases
 
 stg_geostore::
 
-  createdb -O stg_geostore stg_geostore
+  sudo -u postgres createdb -O stg_geostore stg_geostore
 
 diss_geostore::
 
-  createdb -O diss_geostore diss_geostore
+  sudo -u postgres createdb -O diss_geostore diss_geostore
 
 stg_geoserver::
 
-  createdb -O stg_geoserver -T template_postgis stg_geoserver
-  psql stg_geoserver
+  sudo -u postgres createdb -O stg_geoserver -T template_postgis stg_geoserver
+  sudo -u postgres psql stg_geoserver
     stg_geoserver=# GRANT ALL ON geometry_columns TO stg_geoserver;
 
 diss_geoserver::
 
-  createdb -O diss_geoserver -T template_postgis diss_geoserver
-  psql diss_geoserver
+  sudo -u postgres createdb -O diss_geoserver -T template_postgis diss_geoserver
+  sudo -u postgres psql diss_geoserver
     diss_geoserver=# GRANT ALL ON geometry_columns TO diss_geoserver;
-
-
-Create GeoStore DB schemas
-..........................
-
-**TODO** Review this.
-
-::
-
-  psql -U drc -f geostore.ddl drc_geostore_staging
-  psql -U drc -f geostore.ddl drc_geostore_diss
 
 
 Configure PostgreSQL access
 ...........................
 
-Configuration file is in ``/var/lib/pgsql/data/pg_hba.conf``::
+Configuration file is in ``/etc/postgresql/9.1/main/pg_hba.conf``::
 
-   # TYPE  DATABASE  USER     CIDR-ADDRESS         METHOD
+   
+   # TYPE  DATABASE        USER            ADDRESS                 METHOD
+   # Database administrative login by Unix domain socket
+   local   all             postgres                                peer
+     
    # "local" is for Unix domain socket connections only
-   local all      drc                              md5
-   local all      all                              ident sameuser
+   local   all             all                                     md5
+   
    # IPv4 local connections:
-   host  all      drc      127.0.0.1/32         md5
-   host  all      all      127.0.0.1/32         ident sameuser
+   host    all             all             127.0.0.1/32            md5
    # IPv6 local connections:
-   host  all      all      ::1/128              ident sameuser
+   host    all             all             ::1/128                 md5
 
-Autostart
-.........
 
-Postgres does not start automatically by default. Edit the file
-``/etc/init.d/postgresql`` and change the line::
+Then, reboot the posgresql service::
 
-  # chkconfig: - 64 36
-
-to::
-
-  # chkconfig: 345 64 36
-
-Then issue the command::
-
-  chkconfig postgresql reset
-
-.. module:: unredd.install.gdal
+  sudo /etc/init.d/postgresql restart
 
 
 GDAL

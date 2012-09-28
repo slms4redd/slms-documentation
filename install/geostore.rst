@@ -19,6 +19,22 @@ Or:
 
   http://localhost/diss_geostore/
 
+Initialize PostgreSQL database
+------------------------------
+
+Download the schema creation sql:
+
+  wget https://raw.github.com/geosolutions-it/geostore/1.0.1/doc/sql/002_create_schema_postgres.sql
+
+And run it::
+
+  psql -U stg_geostore -f 002_create_schema_postgres.sql stg_geostore
+
+Or::
+
+  psql -U diss_geostore -f 002_create_schema_postgres.sql diss_geostore
+
+
 
 GeoStore configuration files
 ----------------------------
@@ -45,7 +61,7 @@ Create the file ``/var/stg_geostore/geostore-datasource-ovr.properties`` with th
   geostoreDataSource.password=geostore
   geostoreVendorAdapter.databasePlatform=org.hibernate.dialect.PostgreSQLDialect
   geostoreEntityManagerFactory.jpaPropertyMap[hibernate.hbm2ddl.auto]=validate
-  geostoreEntityManagerFactory.jpaPropertyMap[hibernate.default_schema]=geostore
+  geostoreEntityManagerFactory.jpaPropertyMap[hibernate.default_schema]=public
   geostoreVendorAdapter.generateDdl=true
   geostoreVendorAdapter.showSql=false
 
