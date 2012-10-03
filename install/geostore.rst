@@ -56,9 +56,9 @@ Create the file ``/var/stg_geostore/geostore-datasource-ovr.properties`` with th
 
   ### DB SETUP
   geostoreDataSource.driverClassName=org.postgresql.Driver
-  geostoreDataSource.url=jdbc:postgresql://localhost:5432/geostore
-  geostoreDataSource.username=geostore
-  geostoreDataSource.password=geostore
+  geostoreDataSource.url=jdbc:postgresql://localhost:5432/stg_geostore
+  geostoreDataSource.username=stg_geostore
+  geostoreDataSource.password=stg_geostore
   geostoreVendorAdapter.databasePlatform=org.hibernate.dialect.PostgreSQLDialect
   geostoreEntityManagerFactory.jpaPropertyMap[hibernate.hbm2ddl.auto]=validate
   geostoreEntityManagerFactory.jpaPropertyMap[hibernate.default_schema]=public
@@ -142,8 +142,10 @@ Check the content of the ``setenv.sh`` files:
 
 .. code-block:: sh
 
+  SERVICE=stg_geostore # OR diss_geostore
+
   # Application specific environment
   GEOSTORE_OVR_FILE=file:/var/$SERVICE/geostore-datasource-ovr.properties
 
   # Java options
-  JAVA_OPTS=-server -Xms512m -Xmx512m -Dgeostore_ovr=$GEOSTORE_OVR_FILE -Duser.timezone=GMT
+  JAVA_OPTS="-server -Xms512m -Xmx512m -Dgeostore_ovr=$GEOSTORE_OVR_FILE -Duser.timezone=GMT"

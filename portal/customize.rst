@@ -143,12 +143,21 @@ All the resources starting with ``static/`` correspond to the ``static/`` direct
 So, for the logo image, it has to be placed under ``$PORTAL_CONFIG_DIR/static/img/logos.png``.
 
 
-Custom javascript functions
----------------------------
+Custom javascript
+-----------------
 
 Some custom portal actions have to be defined as javascript functions.
-Place them in :file:``static/custom.js``. For example, to link click
-events to specific statistics:
+Place them in :file:``static/custom.js``. For example, to set the base
+URLs for the WMS layers:
+
+.. code-block:: js
+
+   UNREDD.wmsServers = [
+      "http://localhost",
+      "http://127.0.0.1"
+   ];
+
+And to link click events to specific statistics:
 
 .. code-block:: js
 

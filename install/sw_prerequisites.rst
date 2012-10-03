@@ -10,7 +10,8 @@ JDK 6
 -----
 
 Download the latest Java SE 6 JDK from Oracle site:
-http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+  http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 The file will be named, for example, ``jdk-6u35-linux-i586.bin`` for 32 bit Linux systems.
 
@@ -27,7 +28,7 @@ Make a symbolic link to this installation. From ``/usr/lib/jvm``::
 
   sudo ln -s jdk1.6.0_35 default-java
 
-Make it the default java alternative:
+Make it the default java alternative::
 
   sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.6.0_35/bin/java" 1
   sudo update-alternatives --config java
@@ -54,7 +55,7 @@ Download latest tomcat 6 from:
 
 Select the core binary distribution. The file will be named, for example, ``apache-tomcat-6.0.35.tar.gz``.
 
-As superuser, move the file to ``/opt/`` and uncompress it. Make a simpler ``tomcat`` link, so updates are easier in the future:
+As superuser, move the file to ``/opt/`` and uncompress it. Make a simpler ``tomcat`` link, so updates are easier in the future::
   
   sudo mv apache-tomcat-6.0.35.tar.gz /opt
   cd /opt
@@ -73,11 +74,11 @@ In Ubuntu systems, we can use the package managed Apache. Install it with apt-ge
 
   sudo apt-get install apache2
 
-Enable the proxy and proxy_ajp modules:
+Enable the proxy and proxy_ajp modules::
 
   sudo a2enmod proxy proxy_ajp
 
-Restart the server:
+Restart the server::
 
   sudo service apache2 restart
 
@@ -213,6 +214,13 @@ Configuration file is in ``/etc/postgresql/9.1/main/pg_hba.conf``::
 Then, reboot the posgresql service::
 
   sudo /etc/init.d/postgresql restart
+  
+Autostart
+.........
+
+Postgres does not start automatically by default. Activate it with the ``chkconfig`` command::
+
+  sudo chkconfig -s postgresql on
 
 
 GDAL

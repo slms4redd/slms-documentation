@@ -1,3 +1,5 @@
+.. _unredd-geobatch:
+
 ========
 GeoBatch
 ========

@@ -23,9 +23,9 @@ Or:
 GeoServer data directory
 ------------------------
 
-We are going to put geoserver related data inside the directory ``/var/geoserver``.
+We are going to put geoserver related data inside the directory ``/var/???_geoserver``.
 
-Each geoserver instance will have its own subdir within that one:
+Each geoserver instance will have its own dir within that one:
 
 * ``/var/stg_geoserver``: for the staging geoserver instance
 * ``/var/diss_geoserver``: for the dissemination geoserver instance
@@ -33,11 +33,10 @@ Each geoserver instance will have its own subdir within that one:
 *Please note that if you are installing staging and dissemination area on different servers, 
 the above two directories will be installed each inside its own server.*
 
-The directory structure inside ``/var/geoserver/<geoserver_instance_name>`` is as follows:
+The directory structure inside is as follows:
 
 * **data**: geoserver configuration files
-* **logs**: geoserver logs, outside of the datadir, since it needs no backup
-* **extdata**: the actual data to be published, i.e. raster and shp files.
+* **logs**: geoserver logs, outside of the datadir, since it needs no backup.
 
 Further details on customization are found in :ref:`geoserver`.
 
@@ -49,9 +48,11 @@ Check the content of the ``setenv.sh`` files:
 
 .. code-block:: sh
 
+  SERVICE=stg_geoserver # OR diss_geoserver
+
   # Application specific environment
   GEOSERVER_DATA_DIR=/var/$SERVICE/data
   GEOSERVER_LOG_LOCATION=/var/$SERVICE/logs/geoserver.log
 
   # Java options
-  JAVA_OPTS=-server -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -XX:PermSize=64m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -Dorg.geotools.shapefile.datetime=true -DGEOSERVER_DATA_DIR=$GEOSERVER_DATA_DIR -DGEOSERVER_LOG_LOCATION=$GEOSERVER_LOG_LOCATION -Duser.timezone=GMT
+  JAVA_OPTS="-server -Xms1024m -Xmx1024m -XX:MaxPermSize=128m -XX:PermSize=64m -XX:+UseConcMarkSweepGC -XX:NewSize=48m -Dorg.geotools.shapefile.datetime=true -DGEOSERVER_DATA_DIR=$GEOSERVER_DATA_DIR -DGEOSERVER_LOG_LOCATION=$GEOSERVER_LOG_LOCATION -Duser.timezone=GMT"

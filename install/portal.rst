@@ -31,8 +31,10 @@ using the ``-D`` option. For example, in tomcat's :file:`setenv.sh`, add:
 
 .. code-block:: sh
 
-	# Application specific environment
-	PORTAL_CONFIG_DIR=/var/$SERVICE/
+   SERVICE=portal
 
-	# Java options
-	JAVA_OPTS=-server -DMINIFIED_JS=true -DPORTAL_CONFIG_DIR=$PORTAL_CONFIG_DIR -Duser.timezone=GMT
+   # Application specific environment
+   PORTAL_CONFIG_DIR=/var/$SERVICE/
+
+   # Java options
+   JAVA_OPTS="-server -DMINIFIED_JS=true -DPORTAL_CONFIG_DIR=$PORTAL_CONFIG_DIR -Duser.timezone=GMT"

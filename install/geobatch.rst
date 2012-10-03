@@ -26,6 +26,15 @@ Geobatch uses some directories for its processing needs. We'll place all of them
   * ``temp/ingest``: Ingestion flow temp dir 
   * ``temp/reprocess``: Reprocess flow temp dir 
   * ``temp/publish``: Publish flow temp dir 
+  
+Copy the content of ``WEB-INF/data`` (included in the distributable war file)
+to the GEOBATCH_CONFIG_DIR directory (``/var/stg_geobatch/config/``), and edit
+the ``ingestion.xml``, ``publishing.xml`` and ``reprocess.xml`` flow definitions
+to adjust them as needed.
+
+.. note::
+
+   See :ref:`unredd-geobatch` chapter for details on how to setup the flows.
 
 
 Chart scripts
@@ -537,10 +546,12 @@ This is the ``bin/setenv.sh`` file:
 
 .. code-block:: sh
 
+  SERVICE=stg_geobatch
+
   # Application specific environment
   GEOBATCH_CONFIG_DIR=/var/$SERVICE/config
   GEOBATCH_TEMP_DIR=/var/$SERVICE/temp
   UNREDD_OVR=$GEOBATCH_CONFIG_DIR/unredd-ovr.properties
 
   # Java options
-  JAVA_OPTS=-server -Xms2048m -Xmx2048m -DGEOBATCH_CONFIG_DIR=$GEOBATCH_CONFIG_DIR -DGEOBATCH_TEMP_DIR=$GEOBATCH_TEMP_DIR -Dunredd-ovr=$UNREDD_OVR -Duser.timezone=GMT
+  JAVA_OPTS="-server -Xms2048m -Xmx2048m -DGEOBATCH_CONFIG_DIR=$GEOBATCH_CONFIG_DIR -DGEOBATCH_TEMP_DIR=$GEOBATCH_TEMP_DIR -Dunredd-ovr=$UNREDD_OVR -Duser.timezone=GMT"
