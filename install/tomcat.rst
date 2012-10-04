@@ -90,7 +90,7 @@ For each of the instances, do:
          GEOSTORE_OVR_FILE=file:/var/$SERVICE/geostore-datasource-ovr.properties
 
          # Java options
-         JAVA_OPTS="-server -Xms512m -Xmx512m -Dgeostore_ovr=$GEOSTORE_OVR_FILE -Duser.timezone=GMT"
+         JAVA_OPTS="-server -Xms512m -Xmx512m -Dgeostore-ovr=$GEOSTORE_OVR_FILE -Duser.timezone=GMT"
 
 
        **stg_geoserver**:
@@ -141,7 +141,7 @@ For each of the instances, do:
          GEOSTORE_OVR_FILE=file:/var/$SERVICE/geostore-datasource-ovr.properties
          
          # Java options
-         JAVA_OPTS="-server -Xms512m -Xmx1024m -Dgeostore_ovr=$GEOSTORE_OVR_FILE -Duser.timezone=GMT"
+         JAVA_OPTS="-server -Xms512m -Xmx1024m -Dgeostore-ovr=$GEOSTORE_OVR_FILE -Duser.timezone=GMT"
 
 
        **diss_geoserver**:
