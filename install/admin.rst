@@ -40,3 +40,16 @@ In the same file, set the path to the staging GeoBatch input directory. For exam
     <bean id="configure" class="org.fao.unredd.Configure">
         <property name="geobatchFlowSaveDir" value="/var/stg_geobatch/input" />
     </bean>
+
+
+Environment settings
+--------------------
+  
+This is the ``bin/setenv.sh`` file:
+
+.. code-block:: sh
+
+   SERVICE=admin
+   
+   # Java options
+   JAVA_OPTS="-server -Duser.timezone=GMT"
