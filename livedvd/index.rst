@@ -1,17 +1,17 @@
 .. module:: unredd.livedvd
 
-Running and installing the training LiveDVD
+Running and installing the Training Machine
 ===========================================
 
-This chapter walks through the LiveDVD and UNREDD NFMS installation and configuration process. The reader will learn how to run and install the system.
+This chapter walks through the LiveDVD setup used in Workshops, its installation and
+configuration. The reader will learn how to run and install the Training environment.
 
 In this module you will see:
 
 .. toctree::
    :maxdepth: 1 
 
-   Running the LiveDVD <live_dvd_running>
-   Installing the LiveDVD on the system <live_dvd_install>
-   LiveDVD Simplified System Architecture <simplified_architecture>
-   Starting and stopping the applications <run_tomcat>
-
+   live_dvd_running
+   live_dvd_install
+   simplified_architecture
+   run_tomcat

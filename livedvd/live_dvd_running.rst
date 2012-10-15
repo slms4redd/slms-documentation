@@ -3,8 +3,8 @@
 .. _geoserver.live_dvd_running:
 
 
-Running the LiveDVD.
---------------------
+Running the LiveDVD
+-------------------
 
 The workshop data and material is provided through the LiveDVD shipped with this documentation. The LiveDVD runs an instance of XUbuntu 9.10 customized for the workshop, containing the following software:
 
