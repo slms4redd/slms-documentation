@@ -170,13 +170,7 @@ For each of the instances, do:
          # Java options
          JAVA_OPTS="-server -DMINIFIED_JS=true -DPORTAL_CONFIG_DIR=$PORTAL_CONFIG_DIR -Duser.timezone=GMT"
 
-
-  4. Create the directory ``/var/run/tomcat/`` (if it isn’t already present)
-     where PID file will be created::
-
-       mkdir /var/run/tomcat
-
-  5. Create the file ``/etc/init.d/ubuntuTomcatRunner.sh`` with this content:
+  4. Create the file ``/etc/init.d/ubuntuTomcatRunner.sh`` with this content:
 
      .. code-block:: sh
 
@@ -283,7 +277,7 @@ For each of the instances, do:
          fi
          
          # Define other required variables
-         CATALINA_PID="/var/run/tomcat/$SERVICE.pid"
+         CATALINA_PID="/var/run/$SERVICE.pid"
          CATALINA_SH="$CATALINA_HOME/bin/catalina.sh"
          
          # Look for Java Secure Sockets Extension (JSSE) JARs
@@ -445,7 +439,7 @@ For each of the instances, do:
          exit 0
 
 
-  6. For each of the instances, create a file under ``/etc/init.d/``
+  5. For each of the instances, create a file under ``/etc/init.d/``
      named exactly as the correspondig directory under ``/var/tomcat``.
      It will contain the INIT block, the service name, and a description.
      File contents for portal service woud be (for each file, replace
@@ -469,25 +463,25 @@ For each of the instances, do:
       SERVICE=portal
       . /etc/init.d/ubuntuTomcatRunner.sh
 
-  7. Make all scripts created in ``/etc/init.d/`` executable::
+  6. Make all scripts created in ``/etc/init.d/`` executable::
 
       chmod +x ubuntuTomcatRunner.sh stg_* diss_* admin portal
 
-  8. Deploy all the applications into ``webapps``, and create the needed
+  7. Deploy all the applications into ``webapps``, and create the needed
      configuration and data files under ``/var``. Read the specific chapters
      on different instances to know what is needed in each case.
 
-  9. Launch all tomcat instances running the correspondig ``/etc/init.d`` scripts.
+  8. Launch all tomcat instances running the correspondig ``/etc/init.d`` scripts.
 
-  10. Check the applications under the various running instances.
+  9. Check the applications under the various running instances.
 
 
 Check tomcat running instances
 ------------------------------
 
-To see which tomcat instances are running, you can watch the dir
-``/var/run/tomcat/``, which contains one file for each of the running
-instances (inside the file it is stored the PID).
+To see which tomcat instances are running, you can watch the
+``/var/run/`` directory, which contains one file for each of
+the running instances (inside the file it is stored the PID).
 
 
 Make services start at boot time
