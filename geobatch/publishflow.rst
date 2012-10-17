@@ -16,22 +16,22 @@ Flow diagram
 Publish flow
 ==============
 
-The publish flow is responsible for copy the resources from staging area to dissemination area, once the data are ready for pubblication.
-The flow is also responsible for the re-publication of the resources, once they are changed by user feedback or by the admin.
+The publish flow is responsible for copying the resources from the staging area to the dissemination area, once the data are ready for publication.
+The flow is also responsible for the re-publication of the resources, once they have been changed by user feedback or by the admin.
 
-More specifically the flow, given a layer update to publish, do the following task: 
+More specifically the flow, given a layer update to publish, does the following tasks: 
 
-* make a copy of the geostore status for that resource from staging geostore to dissemination geostore
-* make a copy of the granule from staging geoserver to dissemination geoserver.
-  In case of the resource type equals to Vector the flow copy all the feature from staging postgis to dissemination postgis. That operation may take several time.
+* make a copy of the geostore status for that resource from the staging geostore to the dissemination geostore
+* make a copy of the granule from the staging geoserver to the dissemination geoserver.
+  If the resource type equals to Vector the flow copies all the features from the staging postgis to the dissemination postgis. That operation may take a long time.
  
-In case of the first publication of a layer updateResource for a given layer the flow also add the layer resource to the dissemination geostore and create the imagemosaic store for geoserver and postgis table if the layer is Vector.
+On a first publication of a layerUpdate resource for a given layer the flow also adds the layer resource to the dissemination geostore and creates the imagemosaic store for geoserver and the postgis table in case the layer is Vector.
 
 
 Configuration example
 =====================
 
-This is an example configuration. The environment value (URL, user, password ...) are in brackets. 
+This is an example configuration. The environment values (URL, user, password ...) are in brackets. 
 Into `nfms-geobatch release <https://github.com/nfms4redd/nfms-geobatch/blob/master/src/gb-application-unredd/src/main/webapp/WEB-INF/data/publishingFlow.xml>`_ you can find this template configuration. 
 Note that xml tags use the prefix **src** to refer to *staging* and **dst** to *dissemination*::
 
