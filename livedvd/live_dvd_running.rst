@@ -59,9 +59,4 @@ In order to launch the LiveDVD the steps to do are the following:
 
 	 .. note:: Ignore the other options for now, we will inspect them in the next section.
 	 
-#. If the LiveDVD runs correctly with no errors, you should see at the end the Xubuntu GNOME GUI as depicted below
-
-   .. figure:: img/dvd_running.jpg
-      :width: 600
-	  
-      Xubuntu LiveDVD GUI
+#. If the LiveDVD runs correctly with no errors, you should see at the end the Xubuntu GNOME GUI.

@@ -1,17 +1,5 @@
-Starting and stopping the applications
-======================================
-
-All of the UNREDD NFMS applications run on Apache Tomcat. They are split into multiple Tomcat instances, so they can be run separately. In the LiveDVD, you will find four Tomcat instances relevant to this Workshop:
-
-===============  =========================  ===============================================
-Tomcat instance  Contained applications     Access URL
-===============  =========================  ===============================================
-stg_geoserver    GeoServer 2.2.x            http://localhost/stg_geoserver/
-stg_geobatch     GeoBatch                   http://localhost/stg_geobatch/
-stg_geostore     | GeoStore                 | http://localhost/stg_geostore/rest/categories
-                 | Administation Interface  | http://localhost/admin/
-                 | Portal Interface         | http://localhost/portal/
-===============  =========================  ===============================================
+Starting and stopping the tomcat instances
+==========================================
 
 To **start** a tomcat instance, open a Terminal window and type::
 
@@ -19,7 +7,7 @@ To **start** a tomcat instance, open a Terminal window and type::
 
 For example, to use `geoserver`, type::
 
-  sudo /etc/init.d/stg_geoserver start
+  sudo /etc/init.d/geoserver start
   
 After a few seconds, the contained applications will be accessible through their corresponding URLs (see table above).
 
