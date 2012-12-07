@@ -15,12 +15,20 @@ Download the latest Java SE 6 JDK from Oracle site:
 
 The file will be named, for example, ``jdk-6u35-linux-i586.bin`` for 32 bit Linux systems.
 
+Create the directory ``/usr/lib/jvm`` if it doesn't exist::
+
+  sudo mkdir /usr/lib/jvm
+
 Copy the file to ``/usr/lib/jvm``, make it executable, and run it as root::
 
   chmod +x jdk-6u35-linux-i586.bin  
   sudo mv jdk-6u35-linux-i586.bin /usr/lib/jvm
   cd /usr/lib/jvm
   sudo ./jdk-6u35-linux-i586.bin
+
+Delete the file ``jdk-6u35-linux-i586.bin``::
+
+  sudo rm jdk-6u35-linux-i586.bin
 
 The JDK will be installed under ``jdk1.6.0_xx`` directory.
 
@@ -64,6 +72,9 @@ As superuser, move the file to ``/opt/`` and uncompress it. Make a simpler ``tom
 
 From this binaries, we will be configuring and running several tomcat instances. This setup is explained in :ref:`unredd-install-tomcat_instances`.
 
+Delete the file ``apache-tomcat-6.0.35.tar.gz``::
+
+  sudo rm apache-tomcat-6.0.35.tar.gz
 
 Apache 2
 --------
@@ -84,6 +95,55 @@ Restart the server::
 
 Accessing http://localhost should display an **It works!** message.
 
+GDAL
+----
+
+There are two alternatives to install GDAL. The first one, for Ubuntu based systems, uses the UbuntuGIS packages. This method manages all the needed dependencies, and provides installers for other Open Source GIS applications such as Grass, Mapserver, PostGIS, or Quantum GIS.
+
+The second alternative is to manually buildg and install from the GDAL sources, which allows more control over the optional modules, the GDAL version, and the binaries location.
+
+
+A. Using UbuntuGIS repository
+.............................
+
+Add the ubuntugis-unstable repository, and update packages::
+
+  sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+  sudo apt-get update
+
+Install gdal binaries and python utilities::
+
+  sudo apt-get install gdal-bin python-gdal
+
+Check the version::
+
+  gdalinfo --version
+
+
+B. Building from source
+.......................
+
+We’ll build and install it from the sources::
+
+  wget http://download.osgeo.org/gdal/gdal-1.8.1.tar.gz
+
+Using an unprivileged account, untar the tar.gz
+and enter into the created ``gdal`` dir. Then, build::
+
+  ./autogen.sh
+  ./configure  --with-python
+  make
+
+Get root privs and then::
+
+  make install
+  
+In order to use python-gdal libs, you have to issue::
+
+  export PYTHONPATH=/usr/local/lib64/python2.4/site-packages/
+  export LD_LIBRARY_PATH=/usr/local/lib/ 
+
+before running python scripts (e.g. ``gdal_merge.py``).
 
 PostGIS
 -------
@@ -107,7 +167,7 @@ Then, uncompress, build and install::
   sudo make install
   cd doc/
   sudo make comments-install
-  cd loader/
+  cd ../loader/
   make shp2pgsql
   sudo make install
   sudo ln /usr/lib/postgresql/9.1/bin/shp2pgsql /usr/bin/shp2pgsql
@@ -149,23 +209,19 @@ To enter the psql console, run::
 
 stg_geostore::
 
-  postgres=# CREATE USER stg_geostore LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  ALTER USER stg_geostore WITH PASSWORD '------';
+  CREATE USER stg_geostore LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
 
 diss_geostore::
 
-  postgres=# CREATE USER diss_geostore LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  ALTER USER diss_geostore WITH PASSWORD '------';
+  CREATE USER diss_geostore LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
   
 stg_geoserver::
 
-  postgres=# CREATE USER stg_geoserver LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  ALTER USER stg_geoserver WITH PASSWORD '------';
+  CREATE USER stg_geoserver LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
 
 diss_geoserver::
 
-  postgres=# CREATE USER diss_geoserver LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
-  ALTER USER diss_geoserver WITH PASSWORD '------';
+  CREATE USER diss_geoserver LOGIN PASSWORD '------' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE;
 
 
 Create databases
@@ -221,54 +277,3 @@ Autostart
 Postgres does not start automatically by default. Activate it with the ``chkconfig`` command::
 
   sudo chkconfig -s postgresql on
-
-
-GDAL
-----
-
-There are two alternatives to install GDAL. The first one, for Ubuntu based systems, uses the UbuntuGIS packages. This method manages all the needed dependencies, and provides installers for other Open Source GIS applications such as Grass, Mapserver, PostGIS, or Quantum GIS.
-
-The second alternative is to manually buildg and install from the GDAL sources, which allows more control over the optional modules, the GDAL version, and the binaries location.
-
-
-A. Using UbuntuGIS repository
-.............................
-
-Add the ubuntugis-unstable repository, and update packages::
-
-  sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
-  sudo apt-get update
-
-Install gdal binaries and python utilities::
-
-  sudo apt-get install gdal-bin python-gdal
-
-Check the version::
-
-  gdalinfo --version
-
-
-B. Building from source
-.......................
-
-We’ll build and install it from the sources::
-
-  wget http://download.osgeo.org/gdal/gdal-1.8.1.tar.gz
-
-Using an unprivileged account, untar the tar.gz
-and enter into the created ``gdal`` dir. Then, build::
-
-  ./autogen.sh
-  ./configure  --with-python
-  make
-
-Get root privs and then::
-
-  make install
-  
-In order to use python-gdal libs, you have to issue::
-
-  export PYTHONPATH=/usr/local/lib64/python2.4/site-packages/
-  export LD_LIBRARY_PATH=/usr/local/lib/ 
-
-before running python scripts (e.g. ``gdal_merge.py``).

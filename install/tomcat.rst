@@ -9,7 +9,7 @@ The directory where tomcat binaries reside is known as ``CATALINA_HOME``, common
 
   CATALINA_HOME=/opt/tomcat
 
-We are creating different Tomcat profiles to simultaneously run severaltomcat instances on the same system. Each tomcat profile location is called ``CATALINA_BASE``, and it will be different for each running instance. In our case::
+We are creating different Tomcat profiles to simultaneously run several tomcat instances on the same system. Each tomcat profile location is called ``CATALINA_BASE``, and it will be different for each running instance. In our case::
 
   CATALINA_BASE=/var/tomcat/$INSTANCE_NAME
 

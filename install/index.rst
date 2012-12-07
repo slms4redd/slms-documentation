@@ -8,6 +8,8 @@ This module describes the step by step installation and configuration of the nfm
 
 The NFMS platform is java-based and multiplatform, so it can be run on top of different operating systems. Nevertheless, Ubuntu or CentOS Linux distributions are recommended.
 
+The installation has been fully tested on Ubuntu 12.10
+
 .. note:
 
    This step by step guide is based on the `Ubuntu 12.04 <http://www.ubuntu.com/>`_ Linux distribution.
