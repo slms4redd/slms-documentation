@@ -130,6 +130,9 @@ Create the file ``/var/stg_geostore/init_categories.xml``:
     <Category>
         <name>Feedback</name>
     </Category>
+    <Category>
+        <name>Report</name>
+    </Category>
   </CategoryList>
 
 More details on the GeoStore data model for UNREDD: :ref:`unredd-geostore`.

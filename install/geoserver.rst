@@ -41,6 +41,47 @@ The directory structure inside is as follows:
 Further details on customization are found in :ref:`geoserver`.
 
 
+Onlinestats (WPS)
+-----------------
+
+Needed in dissemination area to run custom statistics.
+
+1. Install GeoServer's official WPS Extension.
+2. Clone the utils project from `https://github.com/nfms4redd/nfms-utils/`::
+
+    cd onlinestats
+    mvn install
+
+3. Get its dependencies, running::
+
+    mvn dependency:copy-dependencies
+
+4. Copy from ``target/dependency`` to GeoServer's ``WEB-INF/lib`` the jars that aren't already there::
+
+    commons-cli-1.2.jar
+    gt-sample-data-8.0.jar
+    hamcrest-core-1.1.jar
+    junit-4.10.jar
+    jt-classifiedstats-1.2-GAEZM15092011.jar
+    jt-utils-1.2-GAEZM15092011.jar
+    teststats-1.1-SNAPSHOT.jar
+
+.. note:: This dependency list can change if onlinestats project evolves; ``diff`` command will help sorting out the needed ones.
+
+5. Copy also the onlinestats code from ``target`` to ``WEB-INF/lib``::
+
+   onlinestats-1.1-SNAPSHOT.jar
+
+.. warning:: The following files could conflict. Delete the original one from GeoServer, if needed:
+
+   * GeoServer: jt-utils-1.2.0.jar
+   * AppStats: jt-utils-1.2-GAEZM15092011.jar
+
+.. note:: Custom chart rendering will need an ``htmlChart`` function in the groovy ChartScript. This function receives a Map
+    whose keys are dates (in string format), and values are a matrix of ``double`` values with stats data. The return value must
+    be the report contents. See an example in: https://gist.github.com/4389382#file-deforestation_stats-groovy-L45
+
+
 Environment settings
 --------------------
 

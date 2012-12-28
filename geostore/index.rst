@@ -68,3 +68,6 @@ For the NFMS we need the following specific types of Resources:
 
  **Feedback**:
    Feedback resources are created by Portal users that want to comment on the published information.
+   
+ **Report**:
+   Reports are created on dissemination when Portal users request a custom statistics chart.

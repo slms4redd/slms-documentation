@@ -19,6 +19,7 @@ To customize the portal for a new country, you need to create a new directory, w
       ├── layers.json
       ├── header.tpl
       ├── footer.tpl
+      ├── portal.properties
       └── www/
           ├── unredd.css
           ├── custom.js
@@ -40,11 +41,45 @@ The configuration directory contains the following files:
 * **Messages** folder ``messages/``.
 * **Layers** definitions ``layers.json``.
 * **Header** and **footer** templates ``*.tpl``.
+* Portal **properties** file.
 * A collection of static resources,``web/``. Two of the files are mandatory:
   * ``unredd.css``, with portal styles.
   * ``custom.js``, with custom javascript functionality.
 
 The remaining files under ``web`` directory (images ``img`` and localized files ``loc``) are referred from `templates` and `layers` configuration, and can be organized freely under ``www``.
+
+
+The portal properties file
+--------------------------
+
+The file ``portal.properties`` contains some important parameters, such as the geostore location, or the WPS custom stats service.
+Please review its contents so the parameters match the server setup.
+
+These are the mandatory properties:
+
+ * **languages** The languages to be displayed in the Portal interface. Make sure the corresponding localization file exists in the messages folder.
+ * **geostore.url** The REST endpoint of the dissemination geostore.
+ * **geostore.username** Dissemination GeoStore admin username.
+ * **geostore.password** Dissemination GeoStore admin password.
+ * **recaptcha.publickey** Needed to prevent robots send feedback and custom stats requests.
+ * **recaptcha.privatekey** Ídem.
+
+And these are optional properties for the realtime stats. If not set, a default value will be used:
+
+ * **stats.url**: The WPS service base URL. Usually placed in the dissemination GeoServer. Defaults to *http://localhost:8080/geoserver/wps*
+ * **stats.concurrency**: The number of simultaneous WPS requests to be launched in parallel. Should be in accordance with the GeoServer server's capabilities (a reasonable value is 2 * number of cores in the server). Defaluts to *4*.
+ * **stats.processname**: The process name to be executed. Defaults to *gs:OnlineStatsWPS*.
+
+An example ``portal.properties`` file::
+
+  languages = {"en": "English", "fr": "Français", "es": "Español"}
+  geostore.url = http://demo1.geo-solutions.it/diss_geostore/rest
+  geostore.username = admin
+  geostore.password = XXXXXX
+  stats.url = http://demo1.geo-solutions.it/diss_geoserver/wps
+  stats.concurrency = 8
+  recaptcha.publickey = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  recaptcha.privatekey = XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 Translating the application
