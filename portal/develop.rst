@@ -53,6 +53,27 @@ Removing and adding again the dependent project in the "Deployment Assembly" tab
 to compare the files in .settings to see the differences before and after, but no luck, the bug is no longer reproducible
 even after a "mvn eclipse:clean eclipse:eclipse" or after removing the .settings folder.
 
+Running tests
+==============
+
+Two profiles are configured in the pom.xml, one is "unit" and is active by default, excludes the tests
+marked with the category "org.fao.test.FunctionalTestSuite". This is an interface
+defined in the nfms-utils/common-tests with the only purpose of marking tests as "functional", this is, as
+using the system from a functional point of view and probably requiring interaction with other components of
+the system (geoserver, geobatch, etc.).
+
+Therefore, by issuing::
+
+	$ mvn test
+	
+Only the tests that does not require external applications will be run.
+
+The other profile is "all-tests" and does not exclude any test from the build. In order to activate this profile, it
+is possible to issue the command::
+
+	$ mvn test -P all-tests
+ 
+
 Background technologies
 =======================
 
