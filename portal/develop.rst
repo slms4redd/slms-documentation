@@ -29,6 +29,29 @@ The portal will be accessible at:
 
 To use a custom configuration, edit the :file:`pom.xml` file, and change the ``<portal_config_dir>`` property before running jetty.
 
+.. _debugging_portal_eclipse:
+
+Debugging in eclipse
+=====================
+
+In order to start the application in a J2EE container from eclipse, and therefore being able to debug, it is just necessary to
+specify the -Dwtpversion=2.0 in the mvn eclipse:eclipse command::
+
+	$ mvn eclipse:eclipse -Dwtpversion=2.0 
+
+After it, on an eclipse with support for J2EE applications it is possible to right-click the project and
+select "Debug as" > "Debug on server".
+
+I've experienced some ClassNotFoundExceptions about classes existing on projects referenced by this one. Similar issues has been
+reported here:
+
+* http://www.eclipse.org/forums/index.php/t/248873/
+
+With no solution yet: https://bugs.eclipse.org/bugs/show_bug.cgi?id=370839
+
+Removing and adding again the dependent project in the "Deployment Assembly" tab of the project properties fixes the issue. I wanted
+to compare the files in .settings to see the differences before and after, but no luck, the bug is no longer reproducible
+even after a "mvn eclipse:clean eclipse:eclipse" or after removing the .settings folder.
 
 Background technologies
 =======================
