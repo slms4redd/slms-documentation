@@ -16,5 +16,6 @@ Contents:
    geostore/index
    admin/index
    portal/index
+   tutorial/index
 
 .. * :ref:`search`
